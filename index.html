@@ -1,0 +1,60 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>ClockClock by Mike Ferron</title>
+
+    <script src="ClockClock.js"></script>
+    
+    <style>
+      * { margin: 0; padding: 0;}
+    
+      body, html { height:100%; width: 100%; background-color: #2c3e50; font-family:sans-serif;}
+    
+      #wrapper{position: relative;margin: 0px auto;width: 450px;}
+      #bg, #fg{position: absolute;padding-top:50px;}
+      #bg{z-index: 0;}
+      #fg{z-index: 1;}
+
+      #info { position: absolute; bottom: 0; left:0; width: 100%; height:auto; background:#ecf0f1; z-index: 3; padding: 0px; }
+      #inner-info{ padding:10px;}
+      a { margin: 10px; color: #2c3e50; font-size: 12px; cursor: pointer;}
+      a:hover { color:#34495e;}
+      #close { float:right; font-size: 20px; cursor: pointer; border-bottom: none; margin: 0px; text-decoration: none;}
+    </style>
+    
+    <script>
+      function initialize() {
+        clockClock = new ClockClock(4, 450, 5, "fg", "bg");
+        clockClock.enable();
+      }
+      
+      window.onload = function() {
+        initialize();
+
+        document.getElementById('close').onmousedown = function(e) {
+          e.preventDefault();
+          document.getElementById('info').style.display = 'none';
+          return false;
+        };
+      };
+
+      
+    </script>
+  </head>
+  
+  <body>
+      <div id="wrapper">
+            <canvas id="bg"></canvas>
+            <canvas id="fg"></canvas>
+      </div>
+      <div id="info">
+        <div id="inner-info">
+        Transitions every minute.
+        <a target="_blank" href="http://humanssince1982.com/the-clock-clock-white">my inspiration</a>
+        <a target="_blank" href="http://www.mikeferron.com">my website</a>
+        <a id="close" href="">X</a>
+        </div>
+      </div>
+  </body>
+</html>
