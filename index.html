@@ -1,60 +1,44 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>ClockClock by Mike Ferron</title>
 
-    <script src="ClockClock.js"></script>
-    
-    <style>
-      * { margin: 0; padding: 0;}
-    
-      body, html { height:100%; width: 100%; background-color: #2c3e50; font-family:sans-serif;}
-    
-      #wrapper{position: relative;margin: 0px auto;width: 450px;}
-      #bg, #fg{position: absolute;padding-top:50px;}
-      #bg{z-index: 0;}
-      #fg{z-index: 1;}
+<head>
 
-      #info { position: absolute; bottom: 0; left:0; width: 100%; height:auto; background:#ecf0f1; z-index: 3; padding: 0px; }
-      #inner-info{ padding:10px;}
-      a { margin: 10px; color: #2c3e50; font-size: 12px; cursor: pointer;}
-      a:hover { color:#34495e;}
-      #close { float:right; font-size: 20px; cursor: pointer; border-bottom: none; margin: 0px; text-decoration: none;}
-    </style>
-    
-    <script>
-      function initialize() {
-        clockClock = new ClockClock(4, 450, 5, "fg", "bg");
-        clockClock.enable();
-      }
-      
-      window.onload = function() {
-        initialize();
+  <meta charset="UTF-8">
 
-        document.getElementById('close').onmousedown = function(e) {
-          e.preventDefault();
-          document.getElementById('info').style.display = 'none';
-          return false;
-        };
-      };
+  <title>Canvas ClockClock - CodePen</title>
 
-      
-    </script>
-  </head>
-  
-  <body>
-      <div id="wrapper">
+  <!--
+Copyright (c) 2013 by Mike Ferron (http://codepen.io/ferronsays/pen/sGFAy)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <div id="wrapper">
             <canvas id="bg"></canvas>
             <canvas id="fg"></canvas>
       </div>
       <div id="info">
         <div id="inner-info">
         Transitions every minute.
-        <a target="_blank" href="http://humanssince1982.com/the-clock-clock-white">my inspiration</a>
-        <a target="_blank" href="http://www.mikeferron.com">my website</a>
+        <a  href="http://humanssince1982.com/the-clock-clock-white">my inspiration</a>
         <a id="close" href="">X</a>
         </div>
       </div>
-  </body>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script src="js/index.js" type="text/javascript"></script>
+
+</body>
+
 </html>

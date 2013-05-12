@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013 mikeferron.com, ferronsays at github.com (http://github.com/ferronsays)
+Copyright (c) 2013 mikeferron.com, ferronsays at codepen.io (http://codepen.io/ferronsays)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -486,3 +486,18 @@ function easeInOutQuad(x, t, b, c, d) {
     t--;
     return -(c-b)/2 * (t*(t-2) - 1) + b;
 }
+
+      function initialize() {
+        clockClock = new ClockClock(4, 450, 5, "fg", "bg");
+        clockClock.enable();
+      }
+      
+      window.onload = function() {
+        initialize();
+
+        document.getElementById('close').onmousedown = function(e) {
+          e.preventDefault();
+          document.getElementById('info').style.display = 'none';
+          return false;
+        };
+      };
